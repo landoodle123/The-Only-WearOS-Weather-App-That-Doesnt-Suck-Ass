@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
 fun WearApp(greetingName: String) {
     TheOnlyWearOSWeatherAppThatDoesntSuckAssTheme {
