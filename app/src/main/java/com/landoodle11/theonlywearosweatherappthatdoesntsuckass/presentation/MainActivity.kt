@@ -5,7 +5,9 @@
 
 package com.landoodle11.theonlywearosweatherappthatdoesntsuckass.presentation
 
+import android.icu.text.LocaleDisplayNames
 import android.os.Bundle
+import android.widget.TwoLineListItem
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,6 +40,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+fun fetchLocation() {
+    val latitude: Float;
+    val longitude: Float;
+
+}
 @Composable
 fun WearApp(greetingName: String) {
     TheOnlyWearOSWeatherAppThatDoesntSuckAssTheme {
@@ -66,8 +74,14 @@ fun WearApp(greetingName: String) {
                                 Modifier.fillMaxWidth().transformedHeight(this, transformationSpec),
                             transformation = SurfaceTransformation(transformationSpec),
                         ) {
-                            Text(text = stringResource(R.string.hello_world, greetingName))
+                            Text("Location placeholder")
                         }
+                    }
+                    item {
+                        Text("Temperature placeholder")
+                    }
+                    item {
+                        Text("Rain chance placeholder")
                     }
                     item {
                         Button(
@@ -76,27 +90,7 @@ fun WearApp(greetingName: String) {
                                 .transformedHeight(this, transformationSpec),
                             transformation = SurfaceTransformation(transformationSpec),
                         ) {
-                            Text("Button A")
-                        }
-                    }
-                    item {
-                        Button(
-                            onClick = { /*TODO*/ },
-                            modifier = Modifier.fillMaxWidth()
-                                .transformedHeight(this, transformationSpec),
-                            transformation = SurfaceTransformation(transformationSpec),
-                        ) {
-                            Text("Button B")
-                        }
-                    }
-                    item {
-                        Button(
-                            onClick = { /*TODO*/ },
-                            modifier = Modifier.fillMaxWidth()
-                                .transformedHeight(this, transformationSpec),
-                            transformation = SurfaceTransformation(transformationSpec),
-                        ) {
-                            Text("Button C")
+                            Text("Change Location")
                         }
                     }
 
