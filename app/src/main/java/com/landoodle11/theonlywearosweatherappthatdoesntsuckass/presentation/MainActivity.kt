@@ -307,11 +307,11 @@ class MainActivity : ComponentActivity() {
         if (!number.isFinite()) return "—"
 
         val unitCode = value?.optString("unitCode").orEmpty()
-        val converted = when {
-            targetUnit == "km/h" && unitCode.endsWith("km_h-1") -> number
-            targetUnit == "km/h" && unitCode.endsWith("m_s-1") -> number * 3.6
-            targetUnit == "km" && unitCode.endsWith("m") -> number / 1000.0
-            targetUnit == "%" -> number
+        val converted = when (targetUnit) {
+            "km/h" if unitCode.endsWith("km_h-1") -> number
+            "km/h" if unitCode.endsWith("m_s-1") -> number * 3.6
+            "km" if unitCode.endsWith("m") -> number / 1000.0
+            "%" -> number
             else -> number
         }
 
@@ -375,11 +375,11 @@ fun WearApp(
     weatherLines: List<String>,
     onRefresh: () -> Unit,
 ) {
-    val locationText = if (latitude != null && longitude != null) {
+    /**val locationText = if (latitude != null && longitude != null) {
         String.format(Locale.US, "%.5f, %.5f", latitude, longitude)
     } else {
         locationMessage
-    }
+    }**/
 
     TheOnlyWearOSWeatherAppThatDoesntSuckAssTheme {
         AppScaffold {
