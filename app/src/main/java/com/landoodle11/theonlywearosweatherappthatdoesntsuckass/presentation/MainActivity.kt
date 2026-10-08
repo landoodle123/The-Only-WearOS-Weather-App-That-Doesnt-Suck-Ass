@@ -391,26 +391,6 @@ fun WearApp(
                     contentPadding = contentPadding,
                     state = listState,
                 ) {
-                    item {
-                        ListHeader(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .transformedHeight(this, transformationSpec),
-                            transformation = SurfaceTransformation(transformationSpec),
-                        ) {
-                            Text("Your location")
-                        }
-                    }
-
-                    item {
-                        Text(
-                            text = locationText,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 12.dp)
-
-                        )
-                    }
 
                     item {
                         ListHeader(
